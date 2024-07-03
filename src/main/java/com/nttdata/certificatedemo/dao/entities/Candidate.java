@@ -1,10 +1,16 @@
 package com.nttdata.certificatedemo.dao.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +20,4 @@ public class Candidate {
     private int score;
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
-
-    public Candidate() {}
-
-    public Candidate(String name, int score, Date dateNaissance) {
-        this.name = name;
-        this.score = score;
-        this.dateNaissance = dateNaissance;
-    }
 }
