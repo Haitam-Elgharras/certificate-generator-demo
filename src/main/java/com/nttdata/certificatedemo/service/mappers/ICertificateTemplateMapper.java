@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ICertificateTemplateMapper {
-    CertificateTemplate certificateTemplateDtoToCertificateTemplate(CertificateTemplateDto templateDto);
-    CertificateTemplateDto certificateTemplateToCertificateTemplateDto(CertificateTemplate template);
+    CertificateTemplate certificateDtoToCertificate(CertificateTemplateDto templateDto);
+    CertificateTemplateDto certificateToCertificateDto(CertificateTemplate template);
 }
