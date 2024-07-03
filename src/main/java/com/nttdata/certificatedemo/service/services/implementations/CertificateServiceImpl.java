@@ -2,6 +2,7 @@ package com.nttdata.certificatedemo.service.services.implementations;
 
 import com.nttdata.certificatedemo.dao.entities.CertificateTemplate;
 import com.nttdata.certificatedemo.dao.repositories.CertificateTemplateRepository;
+import com.nttdata.certificatedemo.exceptions.CertificateTemplateNotFoundException;
 import com.nttdata.certificatedemo.service.dtos.CertificateTemplateDto;
 import com.nttdata.certificatedemo.service.mappers.ICertificateTemplateMapper;
 import com.nttdata.certificatedemo.service.services.interfaces.ICertificateService;
@@ -20,10 +21,9 @@ public class CertificateServiceImpl implements ICertificateService {
     // do the same as in CandidateServiceImpl
     @Override
     public CertificateTemplateDto getCertificateById(Long id) {
-        CertificateTemplate certificate = certificateTemplateRepository.findById(id).orElse(null);
-
-        if (certificate == null)
-            return null;
+        CertificateTemplate certificate = certificateTemplateRepository.findById(id).orElseThrow(
+                () -> new CertificateTemplateNotFoundException("Certificate Template with id " + id + " not found")
+        );
 
         return certificateMapper.certificateToCertificateDto(certificate);
     }

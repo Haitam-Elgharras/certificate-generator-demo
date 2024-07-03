@@ -29,12 +29,10 @@ public class CertificateDemoApplication {
             CandidateDto candidate1 = new CandidateDto();
             candidate1.setName("John Doe");
             candidate1.setScore(90);
-            candidate1.setDateNaissance(new Date());
 
             CandidateDto candidate2 = new CandidateDto();
             candidate2.setName("Jane Doe");
             candidate2.setScore(80);
-            candidate2.setDateNaissance(new Date());
 
             candidateService.saveCandidate(candidate1);
             candidateService.saveCandidate(candidate2);

@@ -2,6 +2,7 @@ package com.nttdata.certificatedemo.service.services.implementations;
 
 import com.nttdata.certificatedemo.dao.entities.Candidate;
 import com.nttdata.certificatedemo.dao.repositories.CandidateRepository;
+import com.nttdata.certificatedemo.exceptions.CandidateNotFoundException;
 import com.nttdata.certificatedemo.service.dtos.CandidateDto;
 import com.nttdata.certificatedemo.service.mappers.ICandidateMapper;
 import com.nttdata.certificatedemo.service.services.interfaces.ICandidateService;
@@ -26,10 +27,9 @@ public class CandidateServiceImpl implements ICandidateService {
 
     @Override
     public CandidateDto getCandidateById(Long id) {
-        Candidate candidate = candidateRepository.findById(id).orElse(null);
-
-        if (candidate == null)
-            return null;
+        Candidate candidate = candidateRepository.findById(id).orElseThrow(
+                () -> new CandidateNotFoundException("Candidate with id " + id + " not found")
+        );
 
         return candidateMapper.candidateToCandidateDto(candidate);
     }
