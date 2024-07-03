@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Entity
+@Entity // hibernate annotation
+@Table(name = "candidates")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity // hibernate annotation
+@Table(name = "certificate_templates")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
