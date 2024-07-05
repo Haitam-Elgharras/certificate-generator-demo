@@ -18,7 +18,6 @@ public class CertificateServiceImpl implements ICertificateService {
     private final CertificateTemplateRepository certificateTemplateRepository;
     private final ICertificateTemplateMapper certificateMapper;
 
-    // do the same as in CandidateServiceImpl
     @Override
     public CertificateTemplateDto getCertificateById(Long id) {
         CertificateTemplate certificate = certificateTemplateRepository.findById(id).orElseThrow(

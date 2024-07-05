@@ -27,55 +27,61 @@ public class CertificateDemoApplication {
         return (args) -> {
             // Create some Candidate entities
             CandidateDto candidate1 = new CandidateDto();
-            candidate1.setName("John Doe");
-            candidate1.setScore(90);
+            candidate1.setName("Haitam ELGHARRAS");
+            candidate1.setScore(50);
 
             CandidateDto candidate2 = new CandidateDto();
-            candidate2.setName("Jane Doe");
+            candidate2.setName("Jawad ARBAHI");
             candidate2.setScore(80);
+
+            CandidateDto candidate3 = new CandidateDto();
+            candidate3.setName("Omar ABARRA");
+            candidate3.setScore(90);
+
 
             candidateService.saveCandidate(candidate1);
             candidateService.saveCandidate(candidate2);
+            candidateService.saveCandidate(candidate3);
 
-            // Create some CertificateTemplate entities
-            CertificateTemplateDto certificate1 = new CertificateTemplateDto();
-            certificate1.setName("Java Certificate");
-            certificate1.setTemplatePath("java_certificate_template");
-
-            var certificate2 = new CertificateTemplateDto();
-            certificate2.setName("Python Certificate");
-            certificate2.setTemplatePath("python_certificate_template");
-
-            certificateService.saveCertificate(certificate1);
-            certificateService.saveCertificate(certificate2);
-
-
-
-            // print all candidates
-            System.out.println("####################");
-            System.out.println(" All Candidates");
-            System.out.println("####################");
-            candidateService.getAllCandidates().forEach(System.out::println);
+//            // Create some CertificateTemplate entities
+//            CertificateTemplateDto certificate1 = new CertificateTemplateDto();
+//            certificate1.setName("Java Certificate");
+//            certificate1.setTemplatePath("java_certificate_template");
+//
+//            var certificate2 = new CertificateTemplateDto();
+//            certificate2.setName("Python Certificate");
+//            certificate2.setTemplatePath("python_certificate_template");
+//
+//            certificateService.saveCertificate(certificate1);
+//            certificateService.saveCertificate(certificate2);
 
 
-            // print all certificates
-            System.out.println("####################");
-            System.out.println(" All Certificates");
-            System.out.println("####################");
-            certificateService.getAllCertificates().forEach(System.out::println);
+
+//            // print all candidates
+//            System.out.println("####################");
+//            System.out.println(" All Candidates");
+//            System.out.println("####################");
+//            candidateService.getAllCandidates().forEach(System.out::println);
+//
+//
+//            // print all certificates
+//            System.out.println("####################");
+//            System.out.println(" All Certificates");
+//            System.out.println("####################");
+//            certificateService.getAllCertificates().forEach(System.out::println);
 
 
-            // print a candidate by id
-            System.out.println("####################");
-            System.out.println(" Candidate by id");
-            System.out.println("####################");
-            System.out.println(candidateService.getCandidateById(1L));
-
-            // print a certificate by id
-            System.out.println("####################");
-            System.out.println(" Certificate by id");
-            System.out.println("####################");
-            System.out.println(certificateService.getCertificateById(1L));
+//            // print a candidate by id
+//            System.out.println("####################");
+//            System.out.println(" Candidate by id");
+//            System.out.println("####################");
+//            System.out.println(candidateService.getCandidateById(1L));
+//
+//            // print a certificate by id
+//            System.out.println("####################");
+//            System.out.println(" Certificate by id");
+//            System.out.println("####################");
+//            System.out.println(certificateService.getCertificateById(1L));
 
         };
 

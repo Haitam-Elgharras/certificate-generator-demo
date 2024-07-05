@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/candidates")
+@CrossOrigin("*")
 public class CandidateController {
 
     private final ICandidateService candidateService;
